@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB; 
+use Session;
 use App\Models\Product;
 
 class PagesController extends Controller
@@ -45,6 +46,20 @@ class PagesController extends Controller
      }
      public function sauverproduit(Request $request ) {
          print('le nom est'.$request->product_name);
+         $produit=new Product();
+        /*$produit->product_name=$request->input('product_name');
+        $produit->product_price=$request->input('product_price');
+        $produit->description=$request->input('description');
+        $produit->save();*/
+        $data=array();
+        $data["product_name"]=$request->input('product_name');
+        $data["product_price"]=$request->input('product_price');
+        $data["description"]=$request->input('description');
+        DB::table('products')
+                ->insert($data);
+        Session::put('message','le produit'.$request->product_name.'a ete inserre avec succes');
+        return redirect('/create');
+
         
-     }
+    }
 }

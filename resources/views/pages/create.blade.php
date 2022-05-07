@@ -5,6 +5,9 @@
 @endsection
 
 @section('contenu')
+@if (Session::has("mesage"))<div>{{Session::get("mesage")}}</div>
+    
+@endif
         <form action={{url('/sauverproduit')}} method="POST" class="form-horizontal">
         {{csrf_field()}}
         <div class="form-group"><p><label>product:</label><input type="text" name="product_name"placeholder="product_name" class="form-control" Requered/></p></div>
