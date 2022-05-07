@@ -7,10 +7,14 @@
         <div>
 
 
-            <ul id="de">
+            <ul >
                 <li><a href="{{URL::to('/')}}" >home</a></li>
                 <li><a href="{{URL::to('/apropos')}}">a propos</a></li>
                 <li><a href="{{URL::to('/services')}}">services</a></li>
+            </ul>
+             <ul >
+                <li><a href="{{URL::to('/create')}}">nouveau produit</a></li>
+                
             </ul>
         </div>
     </div>

@@ -20,8 +20,12 @@ Route::get('/', function () {
 
 Route::get('/','App\http\Controllers\PagesController@home');
 
-
 Route::get('/apropos','App\http\Controllers\PagesController@apropos' );
 
-
 Route::get('/services','App\http\Controllers\PagesController@services');
+
+Route::get('/show/{id}','App\http\Controllers\PagesController@show');
+
+Route::get('/create','App\http\Controllers\PagesController@create');
+
+Route::post('/sauverproduit','App\http\Controllers\PagesController@sauverproduit');
