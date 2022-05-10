@@ -24,7 +24,7 @@ class PagesController extends Controller
                        ->limit(1);
                         //->paginate(1);*/
                        // OU loquent
-        $produits = Product::orderBy('product_name','asc')->paginate(1);
+        $produits = Product::orderBy('product_name','asc')->paginate(4);
                        
                     
         return view('pages.services')->with('produits',$produits);
@@ -35,8 +35,8 @@ class PagesController extends Controller
          /*$produits=DB::table('products')
          ->where('id',$id)
          ->fist();*/
-         $produits= BD::find($id);
-         return view('pages.show')->with('produits',$produits);
+         $produits=Product::find($id);
+         return view('/pages.show')->with('produits',$produits);
 
                        
      }
@@ -59,7 +59,8 @@ class PagesController extends Controller
                 ->insert($data);
         Session::put('message','le produit'.$request->product_name.'a ete inserre avec succes');
         return redirect('/create');
-
+    }
+    function edit($id){
         
     }
 }

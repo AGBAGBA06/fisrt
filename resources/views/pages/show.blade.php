@@ -2,7 +2,7 @@
 @section('contenu')
 
 @section('title')
-       services
+       show
 @endsection 
 @section('contenu')
 <h1>
@@ -13,7 +13,7 @@
        <h3>{{$produits->product_price}}</h3>
        <h3>{{$produits->description}}</h3>
        <hr>
-       <h3><a href="">edit</a></h3>
+       <h3><a href="/edit/{{$produits->id}}">edit</a></h3>
        <h3><a href="">delete</a></h3>
 @endsection   
    
